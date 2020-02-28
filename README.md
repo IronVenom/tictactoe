@@ -1,2 +1,4 @@
 # tictactoe
-simple tic tac toe game
+Simple tic tac toe game 
+
+Link : https://fcc5-tictactoe.netlify.com/
