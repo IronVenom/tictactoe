@@ -6,7 +6,9 @@ var computerSymbol = null;
 var playerSymbol = null;
 var game = false;
 var startGame = true;
+var gameEnd = false;
 var gameMessages = document.querySelector("#gameMessages");
+var closeResult = document.querySelector("#closeResult");
 var result = document.querySelector("#result");
 var sq1 = document.querySelector("#sq1");
 var sq2 = document.querySelector("#sq2");
@@ -35,6 +37,7 @@ Xchoice.addEventListener("click",function(){
 	computerSymbol = "O";
 	game = true;
 });
+closeResult.addEventListener("click",function(){reset()});
 Ochoice.addEventListener("click",function(){
 	playerSymbol = "O";
 	computerSymbol = "X";
@@ -68,7 +71,9 @@ function removeFromPositions(filledpos){
 		filledPositions.push(filledpos);
 		playerPositions.push(filledpos);
 		checkResult();
-		computerPlays();
+		if(!gameEnd){
+			computerPlays();
+		}
 	} else {
 		result()
 		reset()
@@ -137,11 +142,11 @@ function gameResult(whowon,res){
 	if(res == "won"){
 		result.textContent = whowon + " has won!";
 		$('#resultModal').modal('show');
-		reset();
+		gameEnd = true;
 	} else {
 		result.textContent = "It's a tie!";
 		$('#resultModal').modal('show');
-		reset();
+		gameEnd = true;
 	}
 }
 
@@ -151,7 +156,11 @@ function computerPlays(){
 		emptyPositions = emptyPositions.filter(position => position !== pos);
 		filledPositions.push(pos);
 		computerPositions.push(pos);
-		gameMessages.textContent = "Computer has selected square " + pos;
+		if (pos !== undefined){
+			gameMessages.textContent = "Computer has selected square " + pos;
+		} else {
+			gameMessages.textContent = "It's a tie!";
+		}
 		if(computerSymbol == "X"){
 			if(pos === 1){
 				fillX(sq1);
@@ -211,6 +220,7 @@ function reset(){
 	computerSymbol = null;
 	game = false;
 	startGame = true;
+	gameEnd = false;
 	emptyPositions = [1,2,3,4,5,6,7,8,9]
 	playerPositions = new Array();
 	computerPositions = new Array();
