@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TicTacToe</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://kit.fontawesome.com/b385f29ce4.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+	<link rel="stylesheet" type="text/css" href="app.css">
+</head>
+<body>
+	<div class="ui modal" id="gameModal">
+		<i class="close icon"></i>
+		<div class="header">Welcome to the Tic Tac Toe game!</div>
+		<div class="image content">
+			<div class="ui small image">
+				<img src="./assets/X.png">
+			</div>
+			<div class="ui small image">
+				<img src="./assets/O.png">
+			</div>
+			<div class="description">
+				<div class="ui large header">Player, choose your symbol and compete with the computer to win!</div>
+				</div>
+			</div>
+			<div class="actions buttons">
+				<div class="ui green cancel button" id="Xchoice">X</div>
+				<div class="ui blue ok button" id="Ochoice">O</div>
+			</div>
+		</div>
+	</div>
+	<div class="ui container">
+		<div class="ui center aligned huge header">Tic Tac Toe</div>
+		<div class="buttons">
+			<button class="ui green button" id="startButton">Start Game</button>
+			<button class="ui red button" id="resetButton">Reset</button>
+		</div>
+		<div class="ui center aligned medium header" id="gameMessages">Click on Start Game to start the game. While playing, click on reset to restart the game.</div>
+	</div>	
+	<div class="grid">
+		<div class="row">
+			<div class="sq" id="sq1"></div>
+			<div class="sq" id="sq4"></div>
+			<div class="sq" id="sq7"></div>
+		</div>
+		<div class="row">
+			<div class="sq" id="sq2"></div>
+			<div class="sq" id="sq5"></div>
+			<div class="sq" id="sq8"></div>
+		</div>
+		<div class="row">
+			<div class="sq" id="sq3"></div>
+			<div class="sq" id="sq6"></div>
+			<div class="sq" id="sq9"></div>
+		</div>
+	</div>
+	<div class="ui modal" id="resultModal">
+		<i class="close icon"></i>
+		<div class="header" id="result"></div>
+		<div class="actions buttons">
+			<div class="ui red cancel button">Close</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</body>
+</html>

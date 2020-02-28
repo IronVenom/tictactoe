@@ -1,0 +1,44 @@
+.grid{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 40px;
+}
+
+.buttons{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+body{
+	background: #bbbbbb;
+}
+
+.X{
+	background-image: url(./assets/X.png);
+}
+
+.O{
+	background-image: url(./assets/O.png);
+}
+
+.sq{
+	padding: 6em;
+	border: 1px solid teal;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: auto;
+	object-fit: contain;
+}
+
+.row{
+	float: left;
+}
+
+@media (max-width: 576px) {
+	.sq{
+		padding: 4em;
+		border: 1px solid black;
+	}
+}
