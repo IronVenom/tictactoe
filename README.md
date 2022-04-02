@@ -1,4 +1,2 @@
 # tictactoe
-Simple tic tac toe game 
-
-Link : https://fcc5-tictactoe.netlify.com/
+Tic-tac-toe game made using JavaScript and Semantic UI. 
